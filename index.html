@@ -135,11 +135,21 @@
   Benutzerkonto des Betriebssystems geschützt; die Zugangsdaten zu den Konten bei Instagram und
   Facebook werden zusätzlich verschlüsselt abgelegt.</p>
   <p>Es gibt eine einzige Ausnahme: Lässt sich bei einem Kommentar nicht eindeutig erkennen, ob
-  er als Bitte um Informationen gemeint ist, wird zur Einordnung dieses Grenzfalls
-  <strong>allein der Text des Kommentars</strong> an die Programmierschnittstelle des Anbieters
-  OpenAI übermittelt. Name, Benutzername, Nutzerkennung und Zeitpunkt werden dabei
-  <strong>nicht</strong> übertragen. Die Übermittlung dient ausschließlich der Frage, ob eine
-  Nachricht gewünscht ist.</p>
+  er als Bitte um Informationen gemeint ist, wird dieser Grenzfall an die Programmierschnittstelle
+  des Anbieters OpenAI übermittelt. Übertragen werden dabei genau drei Dinge:</p>
+  <ul>
+    <li>der <strong>Text des Kommentars</strong>,</li>
+    <li>das <strong>Stichwort</strong>, das für den jeweiligen Beitrag hinterlegt ist
+    (zum Beispiel ein einzelnes Wort wie „Schlei“),</li>
+    <li>eine <strong>immer gleiche Anweisung</strong>, die erklärt, worum es geht und dass mit
+    einem einzigen Wort geantwortet werden soll.</li>
+  </ul>
+  <p>Nicht übertragen werden: <strong>Name, Benutzername, Nutzerkennung, Zeitpunkt des
+  Kommentars, Kennung des Beitrags und Kennung des Kommentars</strong>. Die Übermittlung dient
+  ausschließlich der Frage, ob eine Nachricht gewünscht ist. Ist diese zusätzliche Prüfung in den
+  Einstellungen ausgeschaltet oder ist kein Zugangsschlüssel hinterlegt, findet
+  <strong>keinerlei</strong> Übermittlung an OpenAI statt; das Programm entscheidet dann allein
+  nach festen Regeln auf dem eigenen Rechner.</p>
 
   <h2>Rechtsgrundlage</h2>
   <p>Die Verarbeitung erfolgt auf Grundlage des berechtigten Interesses nach Artikel 6 Absatz 1
